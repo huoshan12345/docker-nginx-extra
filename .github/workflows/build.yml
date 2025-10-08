@@ -36,7 +36,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ IMAGE_NAME_TAG }}
+        tags: ${{ env.IMAGE_NAME_TAG }}
         build-args: |
           NGINX_VERSION=${{ env.NGINX_VERSION }}
           PKG_RELEASE=${{ env.PKG_RELEASE }}

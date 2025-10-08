@@ -19,7 +19,14 @@ jobs:
     - name: Set Environment Variables
       run: |
         echo "IMAGE_TAG=$NGINX_VERSION-$PKG_RELEASE" >> $GITHUB_ENV
-        echo "IMAGE_NAME_TAG=$IMAGE_NAME:$IMAGE_TAG" >> $GITHUB_ENV
+
+    # NOTE: The following step must be after the previous step to use the IMAGE_TAG variable
+    - name: Set Environment Variables
+      run: |
+        echo "IMAGE_NAME_TAG=$IMAGE_NAME:$IMAGE_TAG" >> $GITHUB_ENV        
+
+    - name: Print Environment Variables
+      run: |
         echo ${{ env.IMAGE_TAG }}
         echo ${{ env.IMAGE_NAME_TAG }}
 
@@ -38,7 +45,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ env.IMAGE_TAG }}
+        tags: huoshan12345/${{ env.IMAGE_NAME_TAG }}
         build-args: |
           NGINX_VERSION=${{ env.NGINX_VERSION }}
           PKG_RELEASE=${{ env.PKG_RELEASE }}

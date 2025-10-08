@@ -19,7 +19,7 @@ jobs:
     steps:
     - name: Set Environment Variables
       run: |
-        echo "IMAGE_TAG=$NGINX_VERSION-$PKG_RELEASE" >> $GITHUB_ENV
+        echo "IMAGE_TAG=$NGINX_VERSION" >> $GITHUB_ENV
 
     # NOTE: The following step must be after the previous step to use the IMAGE_TAG variable
     - name: Set Environment Variables

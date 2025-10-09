@@ -52,4 +52,4 @@ jobs:
         build-args: |
           NGINX_VERSION=${{ env.NGINX_VERSION }}
           PKG_RELEASE=${{ env.PKG_RELEASE }}
-          ENABLED_MODULES=${{ env.ENABLED_MODULES }}
+          ENABLED_MODULES="${{ env.ENABLED_MODULES }}" # Note: Keep the quotes for multiple modules

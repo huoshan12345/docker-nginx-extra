@@ -7,7 +7,7 @@ on:
 
 
 env:
-  NGINX_VERSION: 1.29.2
+  NGINX_VERSION: 1.29.8
   PKG_RELEASE: 1
   ENABLED_MODULES: ndk lua subs-filter
   IMAGE_NAME: nginx-extra

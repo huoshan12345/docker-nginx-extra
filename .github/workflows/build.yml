@@ -3,10 +3,12 @@ on:
   push:
     branches:
       - main
+    paths:
+      - .github/workflows/build.yml      
   workflow_dispatch:
 
 env:
-  NGINX_VERSION: 1.29.8
+  NGINX_VERSION: 1.31.2 # check versions at https://github.com/nginx/pkg-oss/tags
   PKG_RELEASE: 1
   ENABLED_MODULES: ndk lua subs-filter
   IMAGE_NAME: nginx-extra
